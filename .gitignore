@@ -1,0 +1,5 @@
+nbproject/
+data/*
+vendor/
+!data/README
+vendor/
