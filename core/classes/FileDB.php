@@ -1,10 +1,12 @@
 <?php
 
-class FileDB {
+namespace Core;
+
+class FileDB  {
 
     private $file_name;
-    
-    /** @var array $data */ 
+
+    /** @var array $data */
     private $data;
 
     public function __construct($file_name) {
@@ -120,7 +122,7 @@ class FileDB {
                 $this->data[$table][] = $row;
             }
 
-            return true;
+            return key(array_slice($this->data[$table], -1, 1, true));
         }
 
         return false;
@@ -211,18 +213,27 @@ class FileDB {
         foreach ($this->data[$table] as $row_id => $row) {
             $condition_met = true;
             foreach ($conditions as $condition_id => $condition) {
-                if ($row[$condition_id] !== $condition) {
+                if ($condition_id === 'row_id') {
+                    if ($row_id != $condition) {
+                        $condition_met = false;
+                        break;
+                    }
+                } else if ($row[$condition_id] !== $condition) {
                     $condition_met = false;
                     break;
                 }
             }
 
             if ($condition_met) {
-                $rows[] = $row;
+                $rows[$row_id] = $row;
             }
         }
-
         return $rows;
+    }
+
+    public
+            function __destruct() {
+        $this->save();
     }
 
 }
