@@ -22,7 +22,9 @@ $footer = new \App\Views\Footer();
             <?php print $navigation->render(); ?>
         </header>
         <main>
-            <div id="title-photo"></div>
+            <div id="title-photo">
+                <span>Turbo Gym! The best gym in the world!</span>
+            </div>
             <section class="wrapper container">
                 <article>
                     <img src="/media/images/1.jpg" alt="paslauga-1">
