@@ -10,21 +10,16 @@ class ApiForm extends \Core\Views\Form {
                 'name' => [
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty'
+                            'validate_not_empty',
+                            'validate_text_lenght' => ['lenght' => 40],
                         ]
                     ]
                 ],
-                'surname' => [
+                'comment' => [
                     'extra' => [
                         'validators' => [
-                            'validate_not_empty'
-                        ]
-                    ]
-                ],
-                'email' => [
-                    'extra' => [
-                        'validators' => [
-                            'validate_not_empty'
+                            'validate_not_empty',
+                            'validate_text_lenght' => ['lenght' => 500],
                         ]
                     ]
                 ],
