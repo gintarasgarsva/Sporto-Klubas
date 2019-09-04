@@ -150,8 +150,8 @@ input::placeholder{
     opacity: 1;
 }
 .login-content{
-    height: 80vh;
     padding-top: 40px;
+    padding-bottom: 176px;
 }
 .feedback-content{
     min-height: 53vh;
@@ -179,7 +179,7 @@ input::placeholder{
     max-width: 300px;
 }
 .reg-block{
-    height: 75vh;
+    padding-bottom: 30px;
 }
 
 @media only screen and (max-width: 800px){
